@@ -1,15 +1,14 @@
-import Root from "./components/Root/index";
-  
-  export default {
-    name: "my-first-theme",
+import Root from './components/Root/index.jsx'
+
+export default {
+    name: 'my-first-theme',
     roots: {
-      theme: Root
+        theme: Root,
     },
     state: {
-      theme: {}
+        theme: {},
     },
     actions: {
-      theme: {}
-    }
-  };
-  
+        theme: {},
+    },
+}
