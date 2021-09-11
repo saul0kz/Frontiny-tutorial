@@ -3,6 +3,7 @@ import Link from '@frontity/components/link'
 import Switch from '@frontity/components/switch'
 import List from '../List';
 import Post from "../Post";
+import Page from '../Page';
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -15,7 +16,7 @@ const Root = ({ state }) => {
           <br />
           <Link link="/page/2">More posts</Link>
           <br />
-          <Link link="/home">Home</Link>
+          <Link link="/about-us">About Us</Link>
         </nav>
         <div>
           <main>
@@ -23,7 +24,7 @@ const Root = ({ state }) => {
               <List when={data.isArchive} />
               <div when={data.isArchive}>This is a list</div>
               <Post when={data.isPost}>This is a post</Post>
-              <Post when={data.isPage}>This is a page</Post>
+              <Page when={data.isPage}>This is a page</Page>
             </Switch>
           </main>
         </div>
