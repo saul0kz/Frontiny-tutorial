@@ -6,17 +6,18 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   return (
-    <div>
+    <ul class="nav flex-column">
       {data.items.map((item) => {
         const post = state.source[item.type][item.id];
         return (
-          <Link link={post.link} key={item.id}>
-            {post.title.rendered}
-            <br />
-          </Link>
+          <li key={item.id} class="nav-item">
+            <a class="nav-link active" aria-current="page" href={post.link}>
+              {post.title.rendered}
+            </a>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 };
 
