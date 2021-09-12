@@ -82,6 +82,17 @@ const Root = ({ state, actions }) => {
         </div>
       </nav>
       <nav></nav>
+
+      <div>
+        <main>
+          <Switch>
+            <List when={data.isArchive} />
+            <div when={data.isArchive}>This is a list</div>
+            <Post when={data.isPost}>This is a post</Post>
+            <Page when={data.isPage}>This is a page</Page>
+          </Switch>
+        </main>
+      </div>
       <div>
         {previous && (
           <button
@@ -105,16 +116,6 @@ const Root = ({ state, actions }) => {
             Next
           </button>
         )}
-      </div>
-      <div>
-        <main>
-          <Switch>
-            <List when={data.isArchive} />
-            <div when={data.isArchive}>This is a list</div>
-            <Post when={data.isPost}>This is a post</Post>
-            <Page when={data.isPage}>This is a page</Page>
-          </Switch>
-        </main>
       </div>
     </>
   );
