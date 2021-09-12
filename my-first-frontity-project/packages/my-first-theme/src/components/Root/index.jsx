@@ -1,4 +1,4 @@
-import { Global, css, connect } from "frontity";
+import { Global, css, connect, Head } from "frontity";
 import Link from "@frontity/components/link";
 import Switch from "@frontity/components/switch";
 import List from "../List";
@@ -20,6 +20,13 @@ const Root = ({ state, actions }) => {
     <>
       <BootstrapStyles />
       <p>
+        <Head>
+          <title>Saul0kz Page</title>
+          <meta
+            name="Saul0kz tutorial Frontity"
+            content="Seguindo os passos do tutorial para consumir uma instalação wordpress como cms headless"
+          />
+        </Head>
         {state.theme.isUrlVisible ? (
           <p>
             Current URL: {state.router.link}
