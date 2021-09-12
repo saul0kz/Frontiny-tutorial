@@ -13,7 +13,7 @@ const BootstrapStyles = () => <Global styles={css(fixedBootstrapCss)} />;
 
 const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
-
+  const { previous, next } = data;
   return (
     <>
       <BootstrapStyles />
@@ -82,6 +82,30 @@ const Root = ({ state, actions }) => {
         </div>
       </nav>
       <nav></nav>
+      <div>
+        {previous && (
+          <button
+            onClick={() => {
+              actions.router.set(data.previous);
+            }}
+            type="button"
+            class="btn btn-outline-primary"
+          >
+            Previous
+          </button>
+        )}
+        {next && (
+          <button
+            type="button"
+            onClick={() => {
+              actions.router.set(data.next);
+            }}
+            class="btn btn-outline-secondary"
+          >
+            Next
+          </button>
+        )}
+      </div>
       <div>
         <main>
           <Switch>
