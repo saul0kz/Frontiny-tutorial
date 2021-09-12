@@ -22,8 +22,11 @@
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.5",
+    "bootstrap": "^5.1.0",
     "dayjs": "^1.10.7",
     "frontity": "^1.17.0",
-    "my-first-theme": "file:packages/my-first-theme"
+    "my-first-theme": "file:packages/my-first-theme",
+    "node-sass": "^6.0.1",
+    "react-bootstrap": "^2.0.0-beta.6"
   }
 }
