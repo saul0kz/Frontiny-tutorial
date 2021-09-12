@@ -11,13 +11,35 @@ import bootstrapCss from "bootstrap/dist/css/bootstrap.min.css";
 const fixedBootstrapCss = fixCss(bootstrapCss);
 const BootstrapStyles = () => <Global styles={css(fixedBootstrapCss)} />;
 
-const Root = ({ state }) => {
+const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
 
   return (
     <>
       <BootstrapStyles />
-      <p> Current URL: {state.router.link}</p>
+      <p>
+        {state.theme.isUrlVisible ? (
+          <p>
+            Current URL: {state.router.link}
+            Show URL
+            <button
+              type="button"
+              onClick={actions.theme.toggleUrl}
+              class="btn btn-danger"
+            >
+              Hide Url
+            </button>
+          </p>
+        ) : (
+          <button
+            type="button"
+            onClick={actions.theme.toggleUrl}
+            class="btn btn-primary"
+          >
+            Show URL
+          </button>
+        )}
+      </p>
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -38,12 +60,20 @@ const Root = ({ state }) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/page/2">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/page/2"
+                >
                   More posts
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/about-us">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/about-us"
+                >
                   About Us
                 </a>
               </li>
