@@ -8,6 +8,7 @@ import { fixCss } from "../../helpers/css";
 
 import bootstrapCss from "bootstrap/dist/css/bootstrap.min.css";
 import Loading from "../Loading";
+import Error from "../Error";
 
 const fixedBootstrapCss = fixCss(bootstrapCss);
 const BootstrapStyles = () => <Global styles={css(fixedBootstrapCss)} />;
@@ -85,7 +86,6 @@ const Root = ({ state, actions }) => {
       <nav></nav>
 
       <div>
-        
         <main>
           <Switch>
             <List when={data.isArchive} />
@@ -93,6 +93,7 @@ const Root = ({ state, actions }) => {
             <Post when={data.isPost}>This is a post</Post>
             <Page when={data.isPage}>This is a page</Page>
             <Loading when={data.isFetching} />
+            <Error when={data.isError} />
           </Switch>
         </main>
       </div>
